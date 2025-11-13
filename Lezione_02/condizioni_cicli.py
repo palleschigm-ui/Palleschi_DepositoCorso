@@ -26,9 +26,10 @@ while(flag):
         print("Pari")
     else:
         print("Dispari")
-    print("Vuoi inserire un nuovo numero: ")
+       
+    print("Vuoi inserire un nuovo numero o una nuova stringa: ")
     scelta_1=input(" ")
-    if scelta.lower()==no:
+    if scelta_1.lower()=="no":
         flag=False
 
 
