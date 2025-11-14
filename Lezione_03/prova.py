@@ -13,3 +13,6 @@ print(tupla)
 lista=[1,2,3]
 lista=[x**2 for x in lista]
 print(lista)
+
+
+
