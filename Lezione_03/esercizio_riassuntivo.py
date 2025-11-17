@@ -32,12 +32,12 @@ def chiamata(rubrica_telefonica):
     probabilita = random.random()
 
     # 80%: numero appartenente alla rubrica
-    if probabilita > 0.9:
+    if probabilita > 0.2:
         numero_chiamata = random.choice(rubrica_telefonica)
 
     # 20%: numero completamente casuale
     else:
-        numero_chiamata = random.randint(1, 10)
+        numero_chiamata = random.randint(10000, 99999)
 
     return numero_chiamata
 
