@@ -32,12 +32,12 @@ def chiamata(rubrica_telefonica):
     probabilita = random.random()
 
     # 80%: numero appartenente alla rubrica
-    if probabilita > 0.2:
+    if probabilita > 0.9:
         numero_chiamata = random.choice(rubrica_telefonica)
 
     # 20%: numero completamente casuale
     else:
-        numero_chiamata = random.randint(10000, 99999)
+        numero_chiamata = random.randint(1, 10)
 
     return numero_chiamata
 
@@ -50,7 +50,7 @@ def controllo_se_numero_in_rubrica(numero_chiamata, rubrica_telefonica,
     if numero_chiamata in numeri_bloccati:
         print(f"Chiamata rifiutata: il numero {numero_chiamata} è bloccato.")
         return None   # indica che la chiamata non deve essere gestita ulteriormente
-
+    
     # Numero registrato nella rubrica
     if numero_chiamata in rubrica_telefonica:
         index_chiamata = rubrica_telefonica.index(numero_chiamata)
