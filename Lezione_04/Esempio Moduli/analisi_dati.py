@@ -26,7 +26,12 @@ def calcolo_del_totale_e_media(lista):
     else:
         # Caso in cui la lista è vuota
         print("La lista è vuota")
+<<<<<<< Updated upstream
         return None, None
+=======
+        return None, None #Questo è meglio metterlo, prima non l'avevo messo ma se poi chiamo la funzione e sto in questo caso e non lo metto che mi ritorna?
+    
+>>>>>>> Stashed changes
 
 
 def vendite_sopra_la_media(lista, media):
