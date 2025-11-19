@@ -29,7 +29,7 @@ cane.parla()
 # Ereditarietà multipla
 #==============================================
 print("#################################################################################")
-print("                        NUOVO ESERCIZIO/ESEMPIO                                                     ")
+print("                        NUOVO ESERCIZIO/ESEMPIO                                  ")
 print("#################################################################################")
 
 
@@ -70,7 +70,7 @@ class AutomobileSportiva(Veicolo, DotazioniSpeciali):
 #Esercizio Ereditarietà Singola
 #=====================================
 print("#################################################################################")
-print("                        NUOVO ESERCIZIO/ESEMPIO                                                     ")
+print("                        NUOVO ESERCIZIO/ESEMPIO                                  ")
 print("#################################################################################")
 #Creare una classe base Animale e diverse classi derivate che rappresentano diversi tipi di animali in uno zoo
 #Ogni classe deivata avrà attributi e metodi specifici che riflettono le caratteristiche e comportamenti unici degli animali che rappresentano
@@ -133,7 +133,7 @@ leone.caccia(giraffa)
 # Esercizio Ereditarietà Singola
 #====================================
 print("#################################################################################")
-print("                        NUOVO ESERCIZIO/ESEMPIO                                                     ")
+print("                        NUOVO ESERCIZIO/ESEMPIO                                  ")
 print("#################################################################################")
 
 #Creare una casse base MembroSquadra e diversi classi figlie che rappresentano
@@ -188,3 +188,80 @@ lippi.descrivi()
 lippi.dirige_allenamento()
 assistente=Assistente("Francesco Garzano",40,"analista di gioco")
 assistente.supporta_team(lippi)
+
+
+#====================================
+# Esercizio Ereditarietà Singola
+#====================================
+print("#################################################################################")
+print("                        NUOVO ESERCIZIO/ESEMPIO                                  ")
+print("#################################################################################")
+
+
+class UnitaMilitare:
+    def __init__(self,nome,numero_soldati):
+        self.nome=nome
+        self.numero_soldati
+    def muovi(self):
+        print("{self.nome} si sta muovendo")
+
+    def attacca(self,nemico):
+        print(f"L'unità {self.nome} sta attaccando {nemico.nome}")
+        if self.numero_soldati>2*nemico.numero_soldati:
+            print("Dovrebbe essere una battaglia facile")
+        elif self.numero_soldati<nemico.numero_soldati/2:
+            print("Sarà una dura battaglia")
+        else: 
+            print("Sarà una battaglia equilibrata")
+        
+    def ritira(self):
+        print("Ci ritiriamo")
+
+class Fanteria(UnitaMilitare):
+    def __init__(self,nome, numero_soldati,trincea):
+        UnitaMilitare.__init__(self,nome, numero_soldati) #Qui va il self
+        self.nome="fanteria"
+
+        self.trincea=trincea
+    
+    def costruisci_trincea(self):
+        if not self.trincea:
+            print("Sta iniziando a costruire una difesa")
+            self.trincea=True
+        else: print("La trincea è già stata costruita")
+
+class Artiglieria(UnitaMilitare):
+    def __init__(self, nome, numero_soldati,numero_pezzi):
+        super().__init__(nome, numero_soldati) #Si puo usare pure super() ma se scrivo UnitaMilitare.__init__() è più leggibile
+        self.nome="artiglieria"
+        self.numero_pezzi=numero_pezzi
+
+    def calibra_artiglieria(self):
+        pass
+
+class Cavalleria(UnitaMilitare):
+    def __init__(self, nome, numero_soldati):
+        super().__init__(nome, numero_soldati)
+        nome="Cavalleria"
+
+    def esplora_terreno(self):
+        pass
+
+class SupportoLogistico(UnitaMilitare):
+    def __init__(self, nome, numero_soldati):
+        super().__init__(nome, numero_soldati)
+
+    def rifornisci_unita(self):
+        pass
+class Ricognizione(UnitaMilitare):
+    def __init__(self, nome, numero_soldati):
+        super().__init__(nome, numero_soldati)
+
+    def conduci_ricognizione(self):
+        pass
+
+class ControlloMilitare(Fanteria,Artiglieria,Cavalleria,SupportoLogistico,Ricognizione):
+    def __init__(self, nome, numero_soldati, trincea):
+        super().__init__(nome, numero_soldati, trincea)
+
+    

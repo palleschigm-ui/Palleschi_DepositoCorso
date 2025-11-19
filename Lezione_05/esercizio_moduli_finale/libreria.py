@@ -1,5 +1,5 @@
 class Libro():
-    def __init__(self, titolo, autore, isbn):
+    def __init__(self, titolo: str, autore:str, isbn:str):
         self.titolo = titolo
         self.autore = autore
         self.isbn = isbn
@@ -9,7 +9,7 @@ class Libro():
 
 
 class Libreria():
-    def __init__(self, catalogo):
+    def __init__(self, catalogo : list):
         self.catalogo = catalogo
     
     def aggiungi_libro(self):
