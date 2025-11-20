@@ -237,15 +237,3 @@ class Professore(Persona):
         return f"Il professore {base} Insegna {self.materia}."
         
 
-        
-
-
-        
-        
-
-        
-
-
-
-        
-
