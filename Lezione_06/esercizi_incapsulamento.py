@@ -125,7 +125,7 @@ class Persona:
 
 
 # -----------------------------------------------------------
-# CLASSE STUDENTE (SOTTCLASSE DI PERSONA)
+# CLASSE STUDENTE (SOTTOCLASSE DI PERSONA)
 # Aggiunge un attributo privato: lista di voti.
 # Override del metodo presentazione.
 # Metodo per calcolare la media dei voti.
@@ -149,7 +149,7 @@ class Studente(Persona):
 
 
 # -----------------------------------------------------------
-# CLASSE PROFESSORE (SOTTCLASSE DI PERSONA)
+# CLASSE PROFESSORE (SOTTOCLASSE DI PERSONA)
 # Aggiunge la materia insegnata.
 # Override del metodo presentazione.
 # -----------------------------------------------------------
