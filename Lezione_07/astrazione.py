@@ -46,6 +46,8 @@ class Pesce(Animale):
 
 #Un elemento chiave delle classi astratte è l'uso del decoratore @abstractmethod
 
+
+
 #=====================================
 # Esercizio sull'astrazione
 #=====================================
@@ -56,43 +58,64 @@ class Impiegato(ABC):
         self.nome=nome
         self.cognome=cognome
         self.stipendio=stipendio
+
     @abstractmethod
     def calcola_stipendio(self):
         pass
 
+
 class Operaio(Impiegato):
-     @abstractmethod
-     def partita_iva(self):
-          pass
+    @abstractmethod
+    def partita_iva(self):
+        pass
+
 
 class Idraulico(Operaio):
     def calcola_stipendio(self):
         return self.stipendio
+
     def partita_iva(self):
         return True
     
+
 class ImpiegatoFisso(Impiegato):
     def calcola_stipendio(self):
         return self.stipendio
+
+
 class ImpiegatoAProvvigione(Impiegato):
-    def __init__(self, nome, cognome, stipendio,vendite:int):
+    def __init__(self, nome, cognome, stipendio, vendite:int):
         super().__init__(nome, cognome, stipendio)
         self.vendite=vendite
+
     def calcola_stipendio(self):
         return self.stipendio + 0.05*self.vendite*(self.vendite>=0)
 
+
 def stampa(impiegato:Impiegato):
-            return (
-            f"Nome: {impiegato.nome}, "
-            f"Cognome: {impiegato.cognome}, "
-            f"Stipendio: {impiegato.calcola_stipendio()} "
-        )
+    # Base comune per tutti (base è una stringa)
+    base = (
+        f"Nome: {impiegato.nome}, "
+        f"Cognome: {impiegato.cognome}, "
+        f"Stipendio: {impiegato.calcola_stipendio()}"
+    )
+
+    # Aggiungo la partita IVA solo se è un Idraulico (cioè un Operaio con quel metodo)
+    if isinstance(impiegato, Idraulico):
+        base += f", Ha partita IVA: {impiegato.partita_iva()}" #concatenazione di stringhe
+
+    return base
+
+
 mario=ImpiegatoFisso("Mario","Rossi",1500)
 luca=ImpiegatoAProvvigione("Luca","Proietti",1800,5000)
 luigi=Idraulico("Luigi","Pincopallino",1600)
+
 print(luigi.partita_iva())
 print(stampa(mario))
 print(stampa(luca))
+print(stampa(luigi))
+
 
 
 
