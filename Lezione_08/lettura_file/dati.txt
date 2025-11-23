@@ -1,0 +1,3 @@
+Ciao!
+Questa è una riga salvata su un file di testo.
+Python rende facile leggere e scrivere file.
