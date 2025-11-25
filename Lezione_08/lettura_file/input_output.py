@@ -70,14 +70,6 @@ with open("nuovi_dati.txt","w") as file: #apre il file in scrittura, se esiste g
     file.write("Di nuovo ciaooooo")
 
 
-
-
-
-
-
-
-
-
 quit()
 
 
