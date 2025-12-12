@@ -81,3 +81,8 @@ while True:
             continue
 
     input("Operazione conclusa. Premi Invio per proseguire...")
+
+#####################################################################
+#####################################################################
+
+print(np.random.random((4,4)))
